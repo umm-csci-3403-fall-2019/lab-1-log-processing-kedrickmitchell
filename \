@@ -1,0 +1,18 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch develop
+# Your branch is up to date with 'origin/develop'.
+#
+# Changes to be committed:
+#	new file:   bin/.process_client_logs.sh.swp
+#	modified:   bin/create_username_dist.sh
+#	modified:   bin/process_client_logs.sh
+#	new file:   log_files/discovery_secure/failed_login_data.txt
+#	modified:   test/process_client_logs.bats
+#
+# Changes not staged for commit:
+#	deleted:    failed_login_data.txt
+#	deleted:    temp.txt
+#
