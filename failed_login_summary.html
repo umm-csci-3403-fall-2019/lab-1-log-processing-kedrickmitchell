@@ -1,3 +1,79 @@
+<!-- ++++++++++++ START OF OVERALL HEADER +++++++++++++++++++++++++++++++ -->
+<html>
+<head>
+	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+	<script type='text/javascript'>
+	google.load('visualization', '1', {'packages':['corechart', 'geochart']});
+
+	<!-- ++++++++++++ END OF OVERALL HEADER +++++++++++++++++++++++++++++++ -->
+	<!-- ++++++++++++ START OF COUNTRY HEADER +++++++++++++++++++++++++++++++ -->
+	
+	google.setOnLoadCallback(drawCountryDistribution);
+
+	function drawCountryDistribution() {
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Country');
+		data.addColumn('number', 'Number of failed logins');
+
+	<!-- ++++++++++++ END OF COUNTRY HEADER +++++++++++++++++++++++++++++++ -->
+data.addRow(['BR', 4]);
+data.addRow(['CA', 65]);
+data.addRow(['CN', 3704]);
+data.addRow(['DE', 491]);
+data.addRow(['FR', 201]);
+data.addRow(['IN', 161]);
+data.addRow(['KR', 660]);
+data.addRow(['RO', 4]);
+data.addRow(['RU', 8]);
+data.addRow(['TH', 192]);
+data.addRow(['TR', 13]);
+data.addRow(['TW', 823]);
+data.addRow(['US', 1333]);
+	<!-- ++++++++++++ START OF COUNTRY FOOTER +++++++++++++++++++++++++++++++ -->
+
+		var chart = new google.visualization.GeoChart(document.getElementById('country_dist_div'));
+		chart.draw(data, {width: 800, height: 500, title: 'Failed logins by country'});
+	}
+
+	<!-- ++++++++++++ END OF COUNTRY FOOTER +++++++++++++++++++++++++++++++ -->
+	<!-- ++++++++++++ START OF HOURS HEADER +++++++++++++++++++++++++++++++ -->
+	
+	google.setOnLoadCallback(drawHoursDistribution);
+
+	function drawHoursDistribution() {
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Hour of the day');
+		data.addColumn('number', 'Number of failed logins');
+
+	<!-- ++++++++++++ END OF HOURS HEADER +++++++++++++++++++++++++++++++ -->
+data.addRow(['00', 57]);
+data.addRow(['01', 208]);
+data.addRow(['02', 8]);
+data.addRow(['03', 144]);
+data.addRow(['04', 1165]);
+data.addRow(['05', 105]);
+data.addRow(['06', 1903]);
+data.addRow(['07', 1424]);
+data.addRow(['08', 743]);
+data.addRow(['10', 4]);
+data.addRow(['11', 201]);
+data.addRow(['12', 292]);
+data.addRow(['13', 309]);
+data.addRow(['14', 503]);
+data.addRow(['15', 55]);
+data.addRow(['17', 4]);
+data.addRow(['18', 10]);
+data.addRow(['19', 11]);
+data.addRow(['20', 435]);
+data.addRow(['22', 62]);
+data.addRow(['23', 17]);
+	<!-- ++++++++++++ START OF HOURS FOOTER +++++++++++++++++++++++++++++++ -->
+
+		var chart = new google.visualization.ColumnChart(document.getElementById('hours_dist_div'));
+		chart.draw(data, {width: 800, height: 550, title: 'Failed logins by hour of the day'});
+	}
+
+	<!-- ++++++++++++ END OF HOURS FOOTER +++++++++++++++++++++++++++++++ -->
 	<!-- ++++++++++++ START OF USERNAME HEADER +++++++++++++++++++++++++++++++ -->
 	
 	google.setOnLoadCallback(drawUsernameDistribution);
@@ -727,3 +803,18 @@ data.addRow(['zzz', 3]);
 	}
 
 	<!-- ++++++++++++ END OF USERNAME FOOTER +++++++++++++++++++++++++++++++ -->
+	<!-- ++++++++++++ START OF OVERALL FOOTER +++++++++++++++++++++++++++++++ -->
+
+	</script>
+</head>
+
+<body>
+	<h1>Distribution of failed logins by username</h1>
+	<div id='username_dist_div' style='width: 800px; height: 600px;'></div>
+	<h1>Distribution of failed logins by hour of the day</h1>
+	<div id='hours_dist_div' style='width: 800px; height: 600px;'></div>
+	<h1>Distribution of failed logins by country of origin</h1>
+	<div id='country_dist_div' style='width: 900px; height: 600px;'></div>
+</body>
+</html>
+<!-- ++++++++++++ END OF OVERALL FOOTER +++++++++++++++++++++++++++++++ -->
