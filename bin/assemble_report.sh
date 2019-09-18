@@ -12,7 +12,7 @@ cd "$main" || exit
 
 ./bin/wrap_contents.sh "$dirname"/temp.html html_components/summary_plots "$dirname"/failed_login_summary.html
 
-#rm "$dirname/temp.html"
+rm "$dirname/temp.html"
 
 
 
