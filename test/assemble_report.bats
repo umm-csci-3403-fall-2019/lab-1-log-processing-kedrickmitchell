@@ -41,6 +41,6 @@ teardown() {
 # for the bar chart for the hour data from discovery and velcro.
 @test "bin/assemble_report.sh generates correct simple output" {
   run bin/assemble_report.sh "$BATS_TMPDIR"
-  run diff -wbB test/failed_login_summary.html "$BATS_TMPDIR"/failed_login_summary.html
+run diff -wbB test/failed_login_summary.html "$BATS_TMPDIR"/failed_login_summary.html
   [ "$status" -eq 0 ]
 }
