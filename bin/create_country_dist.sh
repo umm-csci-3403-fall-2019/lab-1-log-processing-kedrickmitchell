@@ -9,7 +9,7 @@ cd "$DIRNAME" || exit
 HERE=$(pwd)
 
 
-cat */failed_login_data.txt | awk 'match($0, /([a-zA-Z]+) ([0-9]+) ([0-9]+) ([a-zA-z0-9_]+) ([0-9.]+)/, groups) {print groups[5]}' | sort > text.txt
+cat */failed_login_data.txt | awk 'match($0, /([a-zA-Z]+) ([0-9]+) ([0-9]+) ([a-zA-z0-9_.-]+) ([0-9.]+)/, groups) {print groups[5]}' | sort > text.txt
 
 join "$HERE"/text.txt "$MAIN"/etc/country_IP_map.txt | awk '{print $2,$1}' | sort | awk '{print $1}' | uniq -c | awk 'match($0, /[ ]+([0-9]+) ([A-Z]+)/, groups) {print "data.addRow([\x27"groups[2]"\x27, "groups[1]"]);"}' > temp.html
 

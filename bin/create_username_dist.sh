@@ -11,7 +11,7 @@ cd "$DIRNAME" || exit
 HERE=$(pwd)
 
 
-cat */failed_login_data.txt | awk 'match($0, /([a-zA-Z]+) ([0-9]+) ([0-9]+) ([a-zA-z0-9_]+) ([0-9.]+)/, groups) {print groups[4]}' | sort | uniq -c | awk 'match($0, /[ ]+([0-9]+) ([a-zA-Z_0-9]+)/, groups) {print "data.addRow([\x27"groups[2]"\x27, "groups[1]"]);"}' > temp.html
+cat */failed_login_data.txt | awk 'match($0, /([a-zA-Z]+) ([0-9]+) ([0-9]+) ([a-zA-Z_0-9.-]+) ([0-9.]+)/, groups) {print groups[4]}' | sort | uniq -c | awk 'match($0, /[ ]+([0-9]+) ([a-zA-Z_0-9.-]+)/, groups) {print "data.addRow([\x27"groups[2]"\x27, "groups[1]"]);"}' > temp.html
 
 cd "$MAIN" || exit
 
